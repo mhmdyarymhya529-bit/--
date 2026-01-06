@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آهنگ های مها</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000; /* مشکی */
+      color: #ff0000; /* قرمز */
+      font-family: Tahoma, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      padding: 20px;
+      border-bottom: 1px solid #ff0000;
+    }
+    .track {
+      margin: 15px;
+      padding: 10px;
+      border: 1px solid #ff0000;
+      border-radius: 6px;
+    }
+    audio {
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 آهنگ های مها 🎵</h1>
+  <div id="list"></div>
+
+  <script>
+    const list = document.getElementById("list");
+    const TOTAL = 66; // تعداد ترک‌ها
+
+    for (let i = 1; i <= TOTAL; i++) {
+      const div = document.createElement("div");
+      div.className = "track";
+      div.innerHTML = `
+        <p>آهنگ شماره ${i}</p>
+        <audio controls src="./music${i}.mp3"></audio>
+      `;
+      list.appendChild(div);
+    }
+  </script>
+</body>
+</html>
