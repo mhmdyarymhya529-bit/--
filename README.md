@@ -84,3 +84,84 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>آهنگ های مها</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #ff0000;
+      font-family: Tahoma, sans-serif;
+      text-align: center;
+    }
+    header {
+      padding: 20px 16px;
+      border-bottom: 1px solid #ff0000;
+    }
+    .list {
+      padding: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .track {
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #ff0000;
+      border-radius: 6px;
+      background: #111;
+    }
+    .label {
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    audio {
+      width: 100%;
+    }
+    footer {
+      border-top: 1px solid #ff0000;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎵 آهنگ های مها 🎵</h1>
+    <div>۶۶ ترک با پس‌زمینه مشکی و قرمز</div>
+  </header>
+
+  <main class="list" id="list"></main>
+
+  <footer>برای کارکرد صحیح، نام فایل‌ها باید دقیقاً از music1.mp3 تا music66.mp3 باشد.</footer>
+
+  <script>
+    (function () {
+      const TOTAL = 66;
+      const list = document.getElementById('list');
+
+      for (let i = 1; i <= TOTAL; i++) {
+        const item = document.createElement('div');
+        item.className = 'track';
+
+        const label = document.createElement('div');
+        label.className = 'label';
+        label.textContent = `آهنگ شماره ${i}`;
+
+        const audio = document.createElement('audio');
+        audio.controls = true;
+        // فایل‌ها باید کنار index.html باشند
+        audio.src = `./music${i}.mp3`;
+
+        item.appendChild(label);
+        item.appendChild(audio);
+        list.appendChild(item);
+      }
+    })();
+  </script>
+</body>
+</html>
